@@ -15,27 +15,45 @@ export class App extends React.Component<{}, State> {
   };
 
   loadAllGoods = () => {
-    getAll().then(goods => {
-      this.setState({
-        goods,
+    getAll()
+      .then(goods => {
+        this.setState({
+          goods,
+        });
+      })
+      .catch(() => {
+        this.setState({
+          goods: [],
+        });
       });
-    });
   };
 
   loadFirstFiveGoods = () => {
-    get5First().then(goods => {
-      this.setState({
-        goods,
+    get5First()
+      .then(goods => {
+        this.setState({
+          goods,
+        });
+      })
+      .catch(() => {
+        this.setState({
+          goods: [],
+        });
       });
-    });
   };
 
   loadRedGoods = () => {
-    getRed().then(goods => {
-      this.setState({
-        goods,
+    getRed()
+      .then(goods => {
+        this.setState({
+          goods,
+        });
+      })
+      .catch(() => {
+        this.setState({
+          goods: [],
+        });
       });
-    });
   };
 
   render() {
